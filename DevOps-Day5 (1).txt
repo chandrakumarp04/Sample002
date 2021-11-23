@@ -1,0 +1,76 @@
+
+Lesson 05: Jenkins
+Lab 03: Maven
+mvn version
+
+java - /usr/lib/jvm/java-8-openjdk-amd64/
+Git - /usr/bin/git
+maven - /usr/share/maven
+
+http://maven.apache.org/
+wget https://dlcdn.apache.org/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.zip
+cd ~
+unzip apache-maven-3.8.2-bin.zip
+cd apache-maven-3.8.2-bin\
+./bin/mvn -version
+maven - /home/<user-name>/apache-maven-3.8.2
+
+Lab 04: Ant
+Git - https://github.com/Simplilearn-Edu/Demo-Ant.git
+
+Lab 05: Remote exec
+Syntax:
+curl -I -u admin:<admin-token> "http://localhost:8080/job/<job-name>/buildWithParameters?token=<token>"
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+curl -I -u admin:3c28f5b471124036943f58dcc27859b2  "http://localhost:8080/job/param/buildWithParameters?token=toki"
+
+*Lesson 06: Selenium
+* 
+*#Lab 01
+*https://www.selenium.dev/downloads/
+*https://chromedriver.storage.googleapis.com/index.html?path=90.0.4430.24/
+
+*Download latest stable version
+
+# Lab02
+
+Create a file in src folder
+System.setProperty("webdriver.chrome.driver", "//home/<name>/Downloads/chromedriver");
+
+Sample Code:
+//package test;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class testcase01 {
+        public static void main(String[] args) throws InterruptedException{
+                System.setProperty("webdriver.chrome.driver", "//home//Downloads/chromedriver");
+                WebDriver driver = new ChromeDriver();
+                driver.manage().window().maximize();
+                driver.manage().deleteAllCookies();
+                driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.get("https://login.yahoo.com");
+                driver.findElement(By.xpath("//input[@id='login-username']")).sendKeys("xyzz@yahoo.com");
+        }        
+}
+
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class first {
+        public static void main(String[] args) throws InterruptedException{
+                System.setProperty("webdriver.chrome.driver", "//home/swamig8gmail/Downloads/chromedriver");
+                WebDriver driver = new ChromeDriver();
+                driver.manage().window().maximize();
+                driver.manage().deleteAllCookies();
+                driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+                driver.get("https://google.com");
+                driver.findElement(By.xpath("//input[@title='Search']")).sendKeys("Ramakrishna");
+        }        
+}
